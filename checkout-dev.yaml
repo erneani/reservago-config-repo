@@ -1,20 +1,20 @@
 server:
-  port: 8100
+  port: 8102
   error:
     include-message: always
 
 spring:
   application:
-    name: admin
+    name: checkout
   data:
     mongodb:
       host: localhost
       port: 27017
-      database: reservago-admin
+      database: reservago-checkout
 
 springdoc:
   swagger-ui:
-    path: /swagger-doc/admin
+    path: /swagger-doc/checkout
 
 eureka:
   client:
