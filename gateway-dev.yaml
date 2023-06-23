@@ -9,8 +9,7 @@ cloud:
     discovery:
       locator:
         enabled: true
-    discover:
-      lower-case-service-id: true
+        lower-case-service-id: true
 
 eureka:
   client:
