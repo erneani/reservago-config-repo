@@ -1,0 +1,25 @@
+server:
+  servlet:
+    context-path: /payment
+  port: 8101
+  server:
+    error:
+      include-message: always
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/admin
+    username: postgres
+    password: postgres
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+
+springdoc:
+  swagger-ui:
+    path: /swagger-doc/payment
