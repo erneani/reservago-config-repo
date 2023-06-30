@@ -18,9 +18,3 @@ eureka:
     fetch-registry: true
     service-url:
       defaultZone: http://localhost:8761/eureka
-
-services:
-  uri:
-    admin: http://localhost:8100
-    payment: http://localhost:8101
-    checkout: http://localhost:8102
