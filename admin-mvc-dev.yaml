@@ -1,7 +1,6 @@
 server:
   servlet:
     context-path: /admin
-  port: 8100
   server:
     error:
       include-message: always
