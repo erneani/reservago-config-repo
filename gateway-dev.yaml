@@ -6,10 +6,41 @@ spring:
     name: gateway
   cloud:
     gateway:
+      routes:
+        - id: admin-route
+          uri: lb://ADMIN/admin
+          predicates:
+            - Path=/admin/
+          filters:
+            - name: Retry
+        - id: payment-route
+          uri: lb://PAYMENT/payment
+          predicates:
+            - Path=/payment/
+          filters:
+            - name: Retry
+        - id: payment-route
+          uri: lb://CHECKOUT/checkout
+          predicates:
+            - Path=/checkout/
+          filters:
+            - name: Retry
       discovery:
         locator:
           enabled: true
           lower-case-service-id: true
+      default-filters:
+        - name: Retry
+          args:
+            retries: 3
+            methods: GET
+            series: SERVER_ERROR
+            exceptions: java.io.IOException
+            backoff:
+              firstBackoff: 80ms
+              maxBackoff: 400ms
+              factor: 2
+              basedOnPreviousValue: false
 
 eureka:
   client:
