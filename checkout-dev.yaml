@@ -24,3 +24,10 @@ eureka:
       defaultZone: http://localhost:8761/eureka
   instance:
     prefer-ip-address: true
+
+admin:
+  server:
+    name: localhost:8100
+payment:
+  server:
+    name: localhost:8101
