@@ -40,7 +40,7 @@ spring:
             backoff:
               firstBackoff: 80ms
               maxBackoff: 400ms
-              factor: 1.76
+              factor: 2
               basedOnPreviousValue: false
 
 eureka:
