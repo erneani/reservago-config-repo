@@ -7,10 +7,41 @@ spring:
       ribbon:
         enabled: false
     gateway:
+      routes:
+        - id: admin-route
+          uri: lb://ADMIN-MVC/admin
+          predicates:
+            - Path=/admin/
+          filters:
+            - name: Retry
+        - id: payment-route
+          uri: lb://PAYMENT-MVC/payment
+          predicates:
+            - Path=/payment/
+          filters:
+            - name: Retry
+        - id: payment-route
+          uri: lb://CHECKOUT-MVC/checkout
+          predicates:
+            - Path=/checkout/
+          filters:
+            - name: Retry
       discovery:
         locator:
           enabled: true
           lower-case-service-id: true
+      default-filters:
+        - name: Retry
+          args:
+            retries: 3
+            methods: GET
+            series: SERVER_ERROR
+            exceptions: java.io.IOException
+            backoff:
+              firstBackoff: 80ms
+              maxBackoff: 400ms
+              factor: 1.76
+              basedOnPreviousValue: false
 
 eureka:
   instance:
