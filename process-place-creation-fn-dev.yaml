@@ -1,7 +1,7 @@
 server.port: 9004
 
 spring:
-  application.name: process-user-creation-fn
+  application.name: process-place-creation-fn
   rabbitmq:
     host: localhost
     port: 5672
