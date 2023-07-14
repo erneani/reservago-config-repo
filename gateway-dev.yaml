@@ -6,19 +6,6 @@ spring:
     name: gateway
   cloud:
     gateway:
-#      routes:
-#        - id: admin-route
-#          uri: lb://ADMIN/admin
-#          predicates:
-#            - Path=/admin/
-#        - id: payment-route
-#          uri: lb://PAYMENT/payment
-#          predicates:
-#            - Path=/payment/
-#        - id: payment-route
-#          uri: lb://CHECKOUT/checkout
-#          predicates:
-#            - Path=/checkout/
       discovery:
         locator:
           enabled: true
