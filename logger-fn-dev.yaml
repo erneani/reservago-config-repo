@@ -9,5 +9,5 @@ spring:
     password: guest
     connection-timeout: 5s
   cloud.stream.bindings:
-    log-in-0.destination: log
+    log-in-0.destination: logging
 
