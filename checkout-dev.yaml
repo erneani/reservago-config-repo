@@ -25,6 +25,14 @@ eureka:
   instance:
     prefer-ip-address: true
 
+management:
+  endpoint:
+    checkout: enabled
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
 admin:
   server:
     name: localhost:8100
