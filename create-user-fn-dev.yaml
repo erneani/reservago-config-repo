@@ -1,0 +1,13 @@
+server.port: 9001
+
+spring:
+  application.name: create-user-fn
+  rabbitmq:
+    host: localhost
+    port: 15672
+    username: guest
+    password: guest
+    connection-timeout: 5s
+  cloud.stream.bindings:
+    createUser-out-0.destination: createuser
+
