@@ -1,0 +1,14 @@
+server.port: 9002
+
+spring:
+  application.name: process-user-creation-fn
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+    connection-timeout: 5s
+  cloud.stream.bindings:
+    processUserCreation-in-0.destination: createuser
+    processUserCreation-out-0.destination: logging
+
